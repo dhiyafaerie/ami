@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\UserResource\Pages;
-use App\Filament\Resources\UserResource\RelationManagers;
-use App\Models\User;
+use App\Filament\Resources\LectureResource\Pages;
+use App\Filament\Resources\LectureResource\RelationManagers;
+use App\Models\Lecture;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,9 +13,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class UserResource extends Resource
+class LectureResource extends Resource
 {
-    protected static ?string $model = User::class;
+    protected static ?string $model = Lecture::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -23,22 +23,28 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
+                Forms\Components\TextInput::make('nama')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('nidn')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('pendidikan')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('jabatan')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('email')
                     ->email()
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Select::make('roles')
-                    ->relationship('roles', 'name')
-                    ->multiple()
-                    ->preload()
-                    ->searchable(),
-                Forms\Components\TextInput::make('password')
-                    ->password()
+                Forms\Components\TextInput::make('topik')
                     ->required()
                     ->maxLength(255),
+                Forms\Components\Textarea::make('image')
+                    ->required()
+                    ->columnSpanFull(),
             ]);
     }
 
@@ -46,11 +52,18 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')
+                Tables\Columns\TextColumn::make('nama')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('nidn')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('pendidikan')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('jabatan')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('email')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('roles.name'),
+                Tables\Columns\TextColumn::make('topik')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -83,9 +96,9 @@ class UserResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListUsers::route('/'),
-            'create' => Pages\CreateUser::route('/create'),
-            'edit' => Pages\EditUser::route('/{record}/edit'),
+            'index' => Pages\ListLectures::route('/'),
+            'create' => Pages\CreateLecture::route('/create'),
+            'edit' => Pages\EditLecture::route('/{record}/edit'),
         ];
     }
 }
