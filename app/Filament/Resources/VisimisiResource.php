@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use AmidEsfahani\FilamentTinyEditor\TinyEditor;
 
 class VisimisiResource extends Resource
 {
@@ -23,14 +24,18 @@ class VisimisiResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Textarea::make('visi')
+                TinyEditor::make('visi')
                     ->required()
-                    ->columnSpanFull(),
-                Forms\Components\Textarea::make('misi')
+                    ->columnSpanfull(),
+                TinyEditor::make('misi')
+                ->required()
+                ->columnSpanfull(),
+                Forms\Components\FileUpload::make('image')
+                    ->image()
+                    ->multiple()
                     ->required()
-                    ->columnSpanFull(),
-                Forms\Components\Textarea::make('image')
-                    ->required()
+                    ->minFiles(3)
+                    ->maxFiles(3)
                     ->columnSpanFull(),
             ]);
     }

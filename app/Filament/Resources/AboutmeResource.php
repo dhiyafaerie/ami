@@ -26,8 +26,12 @@ class AboutmeResource extends Resource
                 Forms\Components\Textarea::make('content')
                     ->required()
                     ->columnSpanFull(),
-                Forms\Components\Textarea::make('image')
+                Forms\Components\FileUpload::make('image')
                     ->required()
+                    ->image()
+                    ->multiple()
+                    ->minFiles(3)
+                    ->maxFiles(3)
                     ->columnSpanFull(),
             ]);
     }
@@ -36,6 +40,9 @@ class AboutmeResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('content')
+                    ->searchable(),
+                Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
