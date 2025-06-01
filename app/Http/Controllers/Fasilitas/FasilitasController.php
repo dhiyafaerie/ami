@@ -6,7 +6,7 @@ use App\Models\Facility;
 use App\Http\Controllers\Controller;
 // use Illuminate\Http\Request;
 
-class FasilitasControler extends Controller
+class FasilitasController extends Controller
 {
     public function index()
     {

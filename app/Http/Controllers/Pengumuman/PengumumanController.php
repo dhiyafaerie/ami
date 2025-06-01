@@ -6,7 +6,7 @@ use App\Models\Announcement;
 use App\Http\Controllers\Controller;
 // use Illuminate\Http\Request;
 
-class PengumumanControler extends Controller
+class PengumumanController extends Controller
 {
     public function index()
     {

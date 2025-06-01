@@ -242,7 +242,7 @@
         </p>
       </div>
       <div class="grid grid-cols-2 gap-12 lg:grid-cols-4 mt-11 text-center">
-        @if ($rektors->isEmpty())
+        @if ($rectors->isEmpty())
           <div class="col-span-2 lg:col-span-4">
             <p class="text-xneutral-200 font-montserrat text-lg">
               No data avaiable

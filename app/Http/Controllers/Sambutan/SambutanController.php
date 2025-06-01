@@ -6,7 +6,7 @@ use App\Models\Greeting;
 use App\Http\Controllers\Controller;
 // use Illuminate\Http\Request;
 
-class SambutanControler extends Controller
+class SambutanController extends Controller
 {
     public function index()
     {

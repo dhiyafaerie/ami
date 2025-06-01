@@ -7,7 +7,7 @@ use App\Models\Lecture;
 use App\Http\Controllers\Controller;
 // use Illuminate\Http\Request;
 
-class SdmControler extends Controller
+class SdmController extends Controller
 {
     public function index()
     {
