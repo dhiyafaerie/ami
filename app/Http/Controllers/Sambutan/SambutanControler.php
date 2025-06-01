@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Http\Controllers\Sambutan;
+
+use App\Models\Greeting;
+use App\Http\Controllers\Controller;
+// use Illuminate\Http\Request;
+
+class SambutanControler extends Controller
+{
+    public function index()
+    {
+        $greeting = Greeting::all();
+
+        return view('sambutan', compact('greeting'));
+    }
+}

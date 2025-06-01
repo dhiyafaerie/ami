@@ -10,8 +10,21 @@ class VisimisiController extends Controller
 {
     public function index()
     {
-        $historys = Visimisi::all()
+        $visimisi = Visimisi::all();
 
+        // Jika ada data
+        if ($visimisi) {
+            $visi = $visimisi->visi;
+            $misi = $visimisi->misi;
+            $visimisiImg = $visimisi->image;
+        } else {
+        // Jika tidak ada data
+            $visi = 'No Data Avaiable';
+            $misi = 'No Data Avaiable';
+            $visimisiImg = [];
+            
+        }
         
+        return view('visimisi', compact('visi', 'misi', 'visimisiImg'));
     }
 }
