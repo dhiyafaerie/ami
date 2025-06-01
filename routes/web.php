@@ -11,7 +11,7 @@ Route::get('/sdm', [App\Http\Controllers\Sdm\SdmController::class, 'index'])->na
 Route::get('/pengumuman', [App\Http\Controllers\Pengumuman\PengumumanController::class, 'index'])->name('pengumuman');
 Route::get('/pendaftaran', [App\Http\Controllers\Pendaftaran\PendaftaranController::class, 'index'])->name('pendaftaran');
 // Data pendaftaran
-Route::post('/pendaftaran', [App\Http\Controllers\Pendaftaran\PendaftaranController::class, 'store'])->name('pendaftaran.storage');
+Route::post('/pendaftaran', [App\Http\Controllers\Pendaftaran\PendaftaranController::class, 'store'])->name('pendaftaran.store');
 // Detail pengumuman slug
 Route::post('/pengumuman/{slug}', [App\Http\Controllers\Pengumuman\PengumumanController::class, 'show'])->name('pengumuman.show');
 Route::post('/berita/{slug}', [App\Http\Controllers\News\NewsController::class, 'show'])->name('berita.show');

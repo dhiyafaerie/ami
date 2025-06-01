@@ -30,7 +30,7 @@ class PendaftaranController extends Controller
         $fotoName = null;
         if ($request->hasFile('image')) {
             $fotoName = time() . '_' . $request->file('image')->getClientOriginalName();
-            $path = $request->file('image')->storeAs('uploads/students', $fotoName, 'public');
+            $path = $request->file('image')->storeAs('', $fotoName, 'public');
             if (!$path) {
                 return back()->with('error', 'Gambar gagal disimpan');
             }

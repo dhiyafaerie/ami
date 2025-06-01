@@ -1,8 +1,5 @@
 @extends('layouts.app')
-@extends('content')
-
-
-
+@section('content')
     <!-- HERO SECTION -->
     <section class="container min-h-[90vh] relative mt-28">
       <div
@@ -81,21 +78,22 @@
       >
         Bekerjasama Dengan
       </h3>
+
       <div class="flex overflow-x-auto gap-16">
         @if($cooperationImg->isEmpty())
-          <p class="text center text-xneutral-200 font-montserrat text-lg">
-              No data avaiable
-          </p>
+            <p class="text-center text-xneutral-200 font-montserrat text-lg">
+                No data available
+            </p>
         @else
-          @foreach ($cooperationImg as $image)
-            <img
-              class="w-12 md:w-fit"
-              src="{{ asset('storage/' . $image->image) }}"
-              alt="Cooperation"
-            /> 
-          @endforeach
+            @foreach ($cooperationImg as $image)
+                <img
+                    class="w-12 md:w-fit"
+                    src="{{ asset('storage/' . $image->image) }}"
+                    alt="Cooperation"
+                />
+            @endforeach
         @endif
-      </div>
+        </div>
     </div>
 
     <!-- END OF HERO SECTION -->
@@ -111,41 +109,41 @@
           >
             TENTANG KAMI
           </h3>
-          @if (empty($abouts->content) && empty($abouts->image))
+          @if (empty($abouts->content) && empty($abouts->image)) <!-- Check if both content and images are empty -->
             <p class="font-montserrat text-lg sm:text-xl font-semibold text-xneutral-200">
-              No data avaiable
+                No data available
             </p>
           @else
-          <p class="font-montserrat text-2xl sm:text-4xl font-semibold">
-            Membangun generasi
-            <span class="text-secondary-purple">unggul</span> dan
-            <span class="text-secondary-pink">berakhlak</span>
-          </p>
-          <p
-            class="text-base sm:text-lg font-semibold text-xneutral-200 font-montserrat"
-          >
-            {{ $about->content}}
-          </p>
-          <a
-            href="{{ route('sejarah') }}"
-            class="px-6 py-[14px] font-montserrat text-neutral-0 bg-white border w-fit text-lg font-semibold border-primary-200 text-primary-200 rounded-full flex gap-[10px]"
-            ><span>Tentang kami</span>
-            <i class="bi bi-arrow-right"></i>
-          </a>
+            <p class="font-montserrat text-2xl sm:text-4xl font-semibold">
+                Membangun generasi
+                <span class="text-secondary-purple">unggul</span> dan
+                <span class="text-secondary-pink">berakhlak</span>
+            </p>
+            <p
+                class="text-base sm:text-lg font-semibold text-xneutral-200 font-montserrat"
+            >
+                {{ $abouts->content }}
+            </p>
+            <a
+                href="{{ route('sejarah') }}"
+                class="px-6 py-[14px] font-montserrat text-neutral-0 bg-white border w-fit text-lg font-semibold border-primary-200 text-primary-200 rounded-full flex gap-[10px]"
+                ><span>Tentang kami</span>
+                <i class="bi bi-arrow-right"></i>
+            </a>
           @endif
         </div>
         <div class="relative">
           <div class="grid grid-cols-2 gap-6 w-fit">
             @if (isset($abouts->image[0]))
-            <img src="{{ asset('storage/' . $abouts->image[0]) }}" alt="Illustration 1" />
+                <img src="{{ asset('storage/'. $abouts->image[0]) }}" alt="Illustration 1" />
             @endif
             @if (isset($abouts->image[1]))
-            <img src="{{ asset('storage/' . $abouts->image[1]) }}" alt="Illustration 2" />
+                <img src="{{ asset('storage/'. $abouts->image[1]) }}" alt="Illustration 2" />
             @endif
-            @if (isset($abouts->image[1]))
+            @if (isset($abouts->image[2]))
             <img
               class="col-span-2"
-              src="{{ asset('storage/' . $abouts->image[2]) }}"
+              src="{{ asset('storage/'. $abouts->image[2]) }}"
               alt="Illustration 3"
             />
             @endif
@@ -195,30 +193,30 @@
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         @if($news->isEmpty())
-        <div>
-          No data avaiable
-        </div>
-        @else
-        @foreach ($news as $newslist)
-          <div
-            class="p-[14px] rounded-[20px] border border-xneutral-100 bg-xneutral-0"
-          >
-            <div class="max-h-[214px] rounded-2xl overflow-hidden mb-5">
-              <img src="{{ asset('storage/' . $newslist->image) }}" alt="{{ $newslist->title}}" />
+            <div>
+                No data available
             </div>
-            <a
-              href="{{ route('berita.show', $newslist->slug) }}"
-              class="text-base sm:text-lg font-montserrat font-semibold text-xneutral-400 line-clamp-2"
-            >
-              {{ $newslist->title }}
-            </a>
-            <p
-              class="font-montserrat text-xs sm:text-sm font-semibold text-xneutral-200"
-            >
-              {{ \Carbon\Carbon::parse($newslist->created_at)->format('d/m/y') }}
-            </p>
-          </div>
-        @endforeach
+        @else
+            @foreach ($news as $newslist)
+                <div
+                    class="p-[14px] rounded-[20px] border border-xneutral-100 bg-xneutral-0"
+                >
+                    <div class="max-h-[214px] rounded-2xl overflow-hidden mb-5">
+                    <img src="{{ asset('storage/' . $newslist->image) }}" alt="{{ $newslist->title }}" alt="Berita 1" />
+                    </div>
+                    <a
+                    href="{{ route('berita.show', $newslist->slug) }}"
+                    class="text-base sm:text-lg font-montserrat font-semibold text-xneutral-400 line-clamp-2"
+                    >
+                    {{ $newslist->title }}
+                    </a>
+                    <p
+                    class="font-montserrat text-xs sm:text-sm font-semibold text-xneutral-200"
+                    >
+                        {{ \Carbon\Carbon::parse($newslist->created_at)->format('d/m/y') }}
+                    </p>
+                </div>
+            @endforeach
         @endif
       </div>
       <div class="absolute top-12 -left-24 -z-10">
@@ -242,30 +240,30 @@
         </p>
       </div>
       <div class="grid grid-cols-2 gap-12 lg:grid-cols-4 mt-11 text-center">
-        @if ($rectors->isEmpty())
-          <div class="col-span-2 lg:col-span-4">
-            <p class="text-xneutral-200 font-montserrat text-lg">
-              No data avaiable
-            </p>
-          </div>
+        @if ($rectors->isEmpty()) <!-- Check if the collection is empty -->
+            <div class="col-span-2 lg:col-span-4">
+                <p class="text-xneutral-200 font-montserrat text-lg">
+                    No data available
+                </p>
+            </div>
         @else
-        @foreach ($rectors as $rektor)
-        <div class="flex flex-col items-center">
-          <div class="rounded-full overflow-hidden w-fit mb-6">
-            <img src="{{ asset('storage/' . $rektor->image) }}" alt="{{ $rektor->nama}}" />
-          </div>
-          <p
-            class="mb-[2px] text-sm sm:text-base text-xneutral-400 font-semibold font-montserrat"
-          >
-          {{ $rektor->nama }}
-          </p>
-          <p
-            class="mb-[2px] text-xs sm:text-sm text-xneutral-200 font-semibold font-montserrat"
-          >
-            {{ $rektor->jabatan }}
-          </p>
-        </div>
-        @endforeach
+            @foreach ($rectors as $rektor)
+                <div class="flex flex-col items-center">
+                    <div class="rounded-full overflow-hidden w-fit mb-6">
+                    <img src="{{ asset('storage/' . $rektor->image) }}" alt="{{ $rektor->nama }}" />
+                    </div>
+                    <p
+                    class="mb-[2px] text-sm sm:text-base text-xneutral-400 font-semibold font-montserrat"
+                    >
+                    {{ $rektor->nama }}
+                    </p>
+                    <p
+                    class="mb-[2px] text-xs sm:text-sm text-xneutral-200 font-semibold font-montserrat"
+                    >
+                    {{ $rektor->jabatan }}
+                    </p>
+                </div>
+            @endforeach
         @endif
       </div>
     </section>
@@ -309,29 +307,26 @@
               href="{{ route('pengumuman.show', $announcement->slug) }}"
               class="text-base sm:text-lg font-montserrat font-semibold text-xneutral-400 line-clamp-2 mb-4"
             >
-              {{ $announcement->title }}
+                {{ $announcement->title }}
             </a>
             <p
               class="font-montserrat text-xs sm:text-sm font-semibold text-xneutral-200 mb-1.5"
             >
-              {{ Str::limit($announcement->content, 100, '...')}}
+                {{ Str::limit(strip_tags(html_entity_decode($announcement->content)), 100, '...') }}
             </p>
             <p class="font-montserrat text-xs font-semibold text-xneutral-200">
-              {{ \Carbon\Carbon::parse($announcement->created_at)->format('d/m/y') }}
+                {{ \Carbon\Carbon::parse($announcement->created_at)->format('d/m/y') }}
             </p>
           </div>
           @empty
-          <div class="py-[26px] px-7 rounded-[20px] border border-xneutral-100 bg-white">
-            <p class="font-montserrat text-base font-semibold text-xneutral-400">
-              No Data avaiable
-            </p>
-          </div>
-          @endforelse
+            <div class="py-[26px] px-7 rounded-[20px] border border-xneutral-100 bg-white">
+                <p class="font-montserrat text-base font-semibold text-xneutral-400">
+                    No data available
+                </p>
+            </div>
+        @endforelse
         </div>
       </div>
     </section>
     <!-- END OF ANNOUNCEMENT SECTION -->
-
-
-  </body>
-</html>
+@endsection

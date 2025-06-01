@@ -4,27 +4,25 @@ namespace App\Http\Controllers\Visimisi;
 
 use App\Models\Visimisi;
 use App\Http\Controllers\Controller;
-// use Illuminate\Http\Request;
 
 class VisimisiController extends Controller
 {
     public function index()
     {
-        $visimisi = Visimisi::all();
+        $visiMisi = Visimisi::first();
 
-        // Jika ada data
-        if ($visimisi) {
-            $visi = $visimisi->visi;
-            $misi = $visimisi->misi;
-            $visimisiImg = $visimisi->image;
+            // Periksa apakah ada data
+        if ($visiMisi) {
+            $visi = $visiMisi->visi;
+            $misi = $visiMisi->misi;
+            $visimisiImg = $visiMisi->image;
         } else {
-        // Jika tidak ada data
-            $visi = 'No Data Avaiable';
-            $misi = 'No Data Avaiable';
+            $visi = 'No Data Available';
+            $misi = 'No Data Available';
             $visimisiImg = [];
-            
         }
-        
+
         return view('visimisi', compact('visi', 'misi', 'visimisiImg'));
     }
+
 }

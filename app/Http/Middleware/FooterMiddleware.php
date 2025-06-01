@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use App\models\Footer;
+use App\Models\Footer;
 
 class FooterMiddleware
 {
@@ -18,6 +18,7 @@ class FooterMiddleware
     {
         $datafooter = Footer::first();
         view()->share('datafooter', $datafooter);
+
         return $next($request);
     }
 }
