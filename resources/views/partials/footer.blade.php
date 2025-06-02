@@ -6,7 +6,7 @@
         <div>
         <img
             class="mb-10"
-            src="{{ $datafooter->image ? Storage::url($datafooter->image) : asset('/assets/images/B-Uni.png') }}"
+            src="{{ isset($datafooter->image) ? Storage::url($datafooter->image) : asset('assets/images/B-Uni.png') }}"
             alt="Logo B-Universitas"
         />
         <p class="text-medium text-xneutral-200 font-poppins text-sm mb-6">
