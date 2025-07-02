@@ -5,10 +5,10 @@
     >
         <div>
         <img
-            class="mb-10"
-            src="{{ $datafooter->image ? Storage::url($datafooter->image) : asset('/assets/images/B-Uni.png') }}"
-            alt="Logo B-Universitas"
-        />
+    class="mb-10"
+    src="{{ $datafooter->image ?? asset('/assets/images/logo-undar-jombang.png') }}"
+    alt="Logo B-Universitas"
+/>
         <p class="text-medium text-xneutral-200 font-poppins text-sm mb-6">
             Lihat Perkembangan kami diakun sosial media
         </p>

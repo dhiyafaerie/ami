@@ -4,7 +4,7 @@
         <div>
         <a href="">
             <img
-            src="{{ asset('assets/images/B-Uni.png') }}"
+            src="{{ asset('assets/images/logo-undar-jombang.png') }}"
             height="60"
             class="max-h-[60px]"
             alt=""
