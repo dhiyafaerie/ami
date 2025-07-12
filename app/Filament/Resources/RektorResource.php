@@ -17,7 +17,11 @@ class RektorResource extends Resource
 {
     protected static ?string $model = Rektor::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = "Home";
+    protected static ?string $navigationLabel = 'Rektor';
+    protected static ?string $pluralModelLabel = 'Rektor';    
+    protected static ?string $title = 'Rektor';
+    protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
 
     public static function form(Form $form): Form
     {

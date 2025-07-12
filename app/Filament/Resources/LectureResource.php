@@ -17,7 +17,11 @@ class LectureResource extends Resource
 {
     protected static ?string $model = Lecture::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = "Navigasi";
+    protected static ?string $navigationLabel = 'Dosen';
+    protected static ?string $pluralModelLabel = 'Dosen';    
+    protected static ?string $title = 'Dosen';
+    protected static ?string $navigationIcon = 'heroicon-o-home';
 
     public static function form(Form $form): Form
     {

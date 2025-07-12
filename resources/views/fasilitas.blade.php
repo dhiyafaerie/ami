@@ -5,7 +5,7 @@
       <h1
         class="text-xneutral-400 font-montserrat text-xl sm:text-2xl font-semibold"
       >
-        Fasilitas B-University
+        Fasilitas Universitas Darul 'Ulum Jombang
       </h1>
       <p
         class="text-xneutral-200 font-montserrat text-sm sm:text-base font-semibold"

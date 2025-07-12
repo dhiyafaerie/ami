@@ -13,6 +13,6 @@ Route::get('/pendaftaran', [App\Http\Controllers\Pendaftaran\PendaftaranControll
 // Data pendaftaran
 Route::post('/pendaftaran', [App\Http\Controllers\Pendaftaran\PendaftaranController::class, 'store'])->name('pendaftaran.store');
 // Detail pengumuman slug
-Route::post('/pengumuman/{slug}', [App\Http\Controllers\Pengumuman\PengumumanController::class, 'show'])->name('pengumuman.show');
-Route::post('/berita/{slug}', [App\Http\Controllers\News\NewsController::class, 'show'])->name('berita.show');
+Route::get('/pengumuman/{slug}', [App\Http\Controllers\Pengumuman\PengumumanController::class, 'show'])->name('pengumuman.show');
+Route::get('/berita/{slug}', [App\Http\Controllers\News\NewsController::class, 'show'])->name('berita.show');
 

@@ -17,7 +17,11 @@ class AboutmeResource extends Resource
 {
     protected static ?string $model = Aboutme::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = "Home";
+    protected static ?string $navigationLabel = 'Tentang Kami';
+    protected static ?string $pluralModelLabel = 'Tentang Kami';    
+    protected static ?string $title = 'Tentang Kami';
+    protected static ?string $navigationIcon = 'heroicon-o-question-mark-circle';
 
     public static function form(Form $form): Form
     {

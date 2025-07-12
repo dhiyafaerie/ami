@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>B-University</title>
+    <link rel="icon" href="{{ asset('assets/images/logo-undar-jombang.png') }}" type="image/png">
+    <title>Universitas Darul 'Ulum Jombang</title>
 
     <link rel="stylesheet" href="{{ asset('css/output.css') }}" />
     <link

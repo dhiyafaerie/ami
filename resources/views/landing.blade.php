@@ -115,9 +115,9 @@
             </p>
           @else
             <p class="font-montserrat text-2xl sm:text-4xl font-semibold">
-                Membangun generasi
-                <span class="text-secondary-purple">unggul</span> dan
-                <span class="text-secondary-pink">berakhlak</span>
+                Berotak London,
+                <span class="text-secondary-purple">Berhati</span> 
+                <span class="text-secondary-pink">Masjidil Haram</span>
             </p>
             <p
                 class="text-base sm:text-lg font-semibold text-xneutral-200 font-montserrat"
@@ -231,7 +231,7 @@
         <h3
           class="font-montserrat font-semibold text-xneutral-400 text-xl sm:text-2xl"
         >
-          Rektorat B-Universitas
+          Rektorat Universitas Darul 'Ulum Jombang
         </h3>
         <p
           class="font-montserrat text-sm sm:text-base font-semibold text-xneutral-200"

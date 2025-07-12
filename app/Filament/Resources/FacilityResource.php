@@ -17,7 +17,11 @@ class FacilityResource extends Resource
 {
     protected static ?string $model = Facility::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = "Navigasi";
+    protected static ?string $navigationLabel = 'Fasilitas';
+    protected static ?string $pluralModelLabel = 'Fasilitas';    
+    protected static ?string $title = 'Fasilitas';
+    protected static ?string $navigationIcon = 'heroicon-o-home';
 
     public static function form(Form $form): Form
     {

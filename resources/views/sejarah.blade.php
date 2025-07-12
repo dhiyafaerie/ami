@@ -6,7 +6,7 @@
       <h1
         class="text-xneutral-400 font-montserrat text-xl sm:text-2xl font-semibold"
       >
-        Sejarah B-University
+        Sejarah Universitas Darul 'Ulum Jombang
       </h1>
       <p
         class="text-xneutral-200 font-montserrat text-sm sm:text-base font-semibold"
@@ -24,7 +24,7 @@
             <div class="w-full h-[600px] sm:col-span-5 relative overflow-hidden rounded-[30px]">
                 <img
                 src="{{ asset('storage/' . $history->image) }}"
-                alt="Sejarah B-University"
+                alt="Sejarah Universitas Darul 'Ulum Jombang"
                 class="absolute inset-0 w-full h-full object-contain object-center rounded-[30px]"
                 />
             </div>

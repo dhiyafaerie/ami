@@ -17,7 +17,11 @@ class CooperationResource extends Resource
 {
     protected static ?string $model = Cooperation::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = "Home";
+    protected static ?string $navigationLabel = 'Logo Kerjasama';
+    protected static ?string $pluralModelLabel = 'Logo Kerjasama';    
+    protected static ?string $title = 'Logo Kerjasama';
+    protected static ?string $navigationIcon = 'heroicon-o-home';
 
     public static function form(Form $form): Form
     {
