@@ -2,9 +2,9 @@
 <header class="w-full fixed top-0 bg-white z-50">
     <nav class="container flex justify-between py-5 items-center">
         <div>
-        <a href="">
+        <a href="{{ route('index') }}">
             <img
-            src="{{ asset('assets/images/B-Uni.png') }}"
+            src="{{ asset('assets/images/logo-undar-jombang.png') }}"
             height="60"
             class="max-h-[60px]"
             alt=""

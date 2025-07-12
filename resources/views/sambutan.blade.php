@@ -7,7 +7,7 @@
       <h1
         class="text-xneutral-400 font-montserrat text-xl sm:text-2xl font-semibold"
       >
-        Sambutan Rektor B-University
+        Sambutan Rektor Universitas Darul 'Ulum Jombang
       </h1>
       <p
         class="text-xneutral-200 text-sm sm:text-base font-montserrat font-semibold"
@@ -24,7 +24,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-12 gap-8 mt-8">
                 <img
                 src="{{ asset('storage/' . $greeting->image) }}"
-                alt="Rektor B-University"
+                alt="Rektor Universitas Darul 'Ulum Jombang"
                 class="w-full h-fit object-cover rounded-[30px] sm:col-span-4"
                 />
                 <div

@@ -79,7 +79,7 @@
       <p
         class="text-xneutral-200 font-montserrat text-sm sm:text-base font-semibold"
       >
-        Tendik B-University
+        Tendik Uninversitas Darul 'Ulum Jombang
       </p>
 
         @if ($admins->isEmpty())

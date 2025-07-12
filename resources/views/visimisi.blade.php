@@ -6,7 +6,7 @@
       <h1
         class="text-xneutral-400 font-montserrat text-xl sm:text-2xl font-semibold"
       >
-        Sejarah B-University
+        Sejarah Universitas Darul 'Ulum Jombang
       </h1>
       <p
         class="text-xneutral-200 text-sm sm:text-base font-montserrat font-semibold"

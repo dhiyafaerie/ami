@@ -18,7 +18,11 @@ class VisimisiResource extends Resource
 {
     protected static ?string $model = Visimisi::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = "Navigasi";
+    protected static ?string $navigationLabel = 'Visi Misi';
+    protected static ?string $pluralModelLabel = 'Visi Misi';    
+    protected static ?string $title = 'Visi Misi';
+    protected static ?string $navigationIcon = 'heroicon-o-home';
 
     public static function form(Form $form): Form
     {

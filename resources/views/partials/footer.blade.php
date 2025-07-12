@@ -4,11 +4,11 @@
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 lg:gap-36 container"
     >
         <div>
-        <img
-            class="mb-10"
-            src="{{ isset($datafooter->image) ? Storage::url($datafooter->image) : asset('assets/images/B-Uni.png') }}"
-            alt="Logo B-Universitas"
-        />
+        <img 
+    class="mb-10" 
+    src="{{ $datafooter?->image ? Storage::url($datafooter->image) : asset('/assets/images/logo-undar-jombang.png') }}" 
+    alt="Logo Universitas Darul 'Ulum Jombang"
+/>
         <p class="text-medium text-xneutral-200 font-poppins text-sm mb-6">
             Lihat Perkembangan kami diakun sosial media
         </p>
@@ -84,7 +84,7 @@
     <div class="container">
         <hr class="mt-14 border-2 border-xneutral-300" />
         <p class="text-center my-6 font-poppins text-xneutral-200">
-        Copyright © 2024 | B University
+        Copyright © 2025 | Universitas Darul 'Ulum Jombang
         </p>
     </div>
 </footer>

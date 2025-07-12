@@ -18,7 +18,11 @@ class HistoryResource extends Resource
 {
     protected static ?string $model = History::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = "Navigasi";
+    protected static ?string $navigationLabel = 'Sejarah';
+    protected static ?string $pluralModelLabel = 'Sejarah';    
+    protected static ?string $title = 'Sejarah';
+    protected static ?string $navigationIcon = 'heroicon-o-home';
 
     public static function form(Form $form): Form
     {

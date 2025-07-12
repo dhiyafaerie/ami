@@ -18,7 +18,11 @@ class GreetingResource extends Resource
 {
     protected static ?string $model = Greeting::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = "Navigasi";
+    protected static ?string $navigationLabel = 'Sambutan Rektor';
+    protected static ?string $pluralModelLabel = 'Sambutan Rektor';    
+    protected static ?string $title = 'Sambutan Rektor';
+    protected static ?string $navigationIcon = 'heroicon-o-home';
 
     public static function form(Form $form): Form
     {

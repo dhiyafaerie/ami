@@ -12,7 +12,7 @@ class SdmController extends Controller
     public function index()
     {
         $admins = Admin::all();
-        $lecture = Lecture::all();
+        $lectures = Lecture::all();
 
         return view('sdm', compact('admins', 'lectures'));
     }

@@ -8,5 +8,6 @@ use Filament\Resources\Pages\CreateRecord;
 
 class CreateCooperation extends CreateRecord
 {
+    protected static ?string $title = 'Logo Kerjasama';
     protected static string $resource = CooperationResource::class;
 }
